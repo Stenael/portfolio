@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import { FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa'
 
 function First() {
   return (
@@ -11,7 +11,7 @@ function First() {
           STEVEN PUTRA
         </h1>
 
-        <h1 className="font-heading  text-[#ecb939] text-5xl md:text-9xl leading-none">
+        <h1 className="font-heading text-[#ecb939] text-5xl md:text-9xl leading-none">
           NATANAEL
         </h1>
 
@@ -37,6 +37,15 @@ function First() {
           className="text-white text-2xl hover:text-blue-400 transition"
         >
           <FaLinkedinIn />
+        </a>
+
+        <a
+          href="https://github.com/USERNAME"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-2xl hover:text-gray-400 transition"
+        >
+          <FaGithub />
         </a>
       </div>
     </div>
