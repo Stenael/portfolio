@@ -40,7 +40,7 @@ function First() {
         </a>
 
         <a
-          href="https://github.com/USERNAME"
+          href="https://github.com/Stenael"
           target="_blank"
           rel="noopener noreferrer"
           className="text-white text-2xl hover:text-gray-400 transition"
