@@ -92,9 +92,9 @@ function Resume() {
                     {item.title}
                   </h2>
 
-                  <p className="text-white leading-relaxed mb-3 font-manrope">
+                  {/* <p className="text-white leading-relaxed mb-3 font-manrope">
                     {item.description}
-                  </p>
+                  </p> */}
 
                   <div className="inline-flex items-center gap-2 text-[#ecb939] font-medium">
                     Visit Website
