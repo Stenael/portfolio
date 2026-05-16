@@ -6,7 +6,7 @@ const resumes = [
     description:
       "A personal portfolio website showcasing projects, skills, and experiences.",
     image: "/portfolio.png",
-    link: "https://www.apikko.co.id/",
+    link: "https://stevennatanael-portfolio.vercel.app/",
   },
   {
     title: "Website Profile RT Digital",

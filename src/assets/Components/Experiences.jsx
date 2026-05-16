@@ -38,8 +38,6 @@ function Experiences() {
   return (
     <section id="experiences">
       <div className="relative min-h-screen bg-black overflow-hidden px-10 md:px-40 py-20">
-
-        {/* DOTS */}
         <div className="absolute top-32 right-20 opacity-10">
           <div className="grid grid-cols-4 gap-3">
             {[...Array(36)].map((_, i) => (
@@ -59,8 +57,6 @@ function Experiences() {
             ))}
           </div>
         </div>
-
-        {/* BACKGROUND GLOW */}
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -72,7 +68,6 @@ function Experiences() {
           }}
           className="absolute -top-32 -left-32 w-80 h-80 bg-[#fff44f]/5 rounded-full blur-3xl"
         ></motion.div>
-
         <motion.div
           animate={{
             scale: [1, 1.15, 1],
@@ -84,7 +79,6 @@ function Experiences() {
           }}
           className="absolute bottom-0 right-0 w-96 h-96 bg-[#fff44f]/5 rounded-full blur-3xl"
         ></motion.div>
-
         <motion.div
           animate={{
             scale: [1, 1.04, 1],
@@ -95,10 +89,7 @@ function Experiences() {
           }}
           className="absolute bottom-0 -left-[30px] w-64 h-64 border-t-[30px] border-r-[30px] border-[#ecb939]/10 rounded-tr-full"
         ></motion.div>
-
         <div className="relative z-10">
-
-          {/* TITLE */}
           <motion.div
             initial={{ opacity: 0, y: -60 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -110,10 +101,7 @@ function Experiences() {
               Experiences
             </h1>
           </motion.div>
-
           <div className="relative max-w-5xl mx-auto">
-
-            {/* TIMELINE */}
             <motion.div
               initial={{ height: 0 }}
               whileInView={{ height: "100%" }}
@@ -145,8 +133,6 @@ function Experiences() {
                   viewport={{ once: true }}
                   className="relative pl-20"
                 >
-
-                  {/* NUMBER */}
                   <motion.div
                     whileHover={{
                       scale: 1.15,
@@ -160,8 +146,6 @@ function Experiences() {
                   >
                     {index + 1}
                   </motion.div>
-
-                  {/* CARD */}
                   <motion.div
                     whileHover={{
                       y: -10,
@@ -172,8 +156,6 @@ function Experiences() {
                     }}
                     className="group relative bg-[#fff44f]/5 backdrop-blur-md border border-[#fff44f]/10 rounded-[32px] p-8 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.35)]"
                   >
-
-                    {/* CARD GLOW */}
                     <motion.div
                       animate={{
                         scale: [1, 1.3, 1],
@@ -187,13 +169,9 @@ function Experiences() {
                     ></motion.div>
 
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-6">
-
-                      {/* LEFT */}
                       <div className="flex items-start gap-5">
-
                         <div className="relative">
                           <div className="absolute inset-0 bg-[#fff44f]/20 blur-2xl rounded-full"></div>
-
                           <motion.div
                             whileHover={{
                               rotate: 3,
@@ -242,7 +220,6 @@ function Experiences() {
                         </div>
                       </div>
 
-                      {/* RIGHT */}
                       <div className="flex flex-col items-start lg:items-end gap-3">
 
                         <motion.span
@@ -260,7 +237,6 @@ function Experiences() {
                       </div>
                     </div>
 
-                    {/* DESCRIPTION */}
                     <motion.p
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
