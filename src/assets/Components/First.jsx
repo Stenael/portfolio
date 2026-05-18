@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import { FaDownload, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa'
 
 function First() {
   return (
@@ -20,7 +20,18 @@ function First() {
         </p>
       </div>
 
-      <div className="absolute bottom-8 right-8 z-20 flex gap-4">
+      <div className="absolute bottom-8 right-8 z-20 items-center flex gap-4">
+        <a
+          href="/CV-StevenNatanael.pdf"
+          download
+          className="group flex items-center gap-3 px-5 py-3 rounded-full bg-[#ecb939]/10 border border-[#ecb939]/30 backdrop-blur-md text-[#ecb939] hover:bg-[#ecb939] hover:text-black transition duration-300 shadow-[0_0_20px_rgba(236,185,57,0.15)]"
+        >
+          <FaDownload className="text-sm group-hover:-translate-y-0.5 transition duration-300" />
+
+          <span className="text-sm font-medium tracking-wide">
+            Download CV
+          </span>
+        </a>
         <a
           href="https://instagram.com/natanaelputrasteven"
           target="_blank"
