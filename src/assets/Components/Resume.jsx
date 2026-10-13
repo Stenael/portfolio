@@ -12,7 +12,7 @@ const resumes = [
     title: "Website Profile RT Digital",
     description:
       "Landing page for a digital platform designed for community management and neighborhood services.",
-    image: "/rtdigital.png",
+    image: "/rtdigital2.png",
     link: "https://www.rukuntetangga.online/",
   },
   {
