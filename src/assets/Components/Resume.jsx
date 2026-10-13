@@ -25,9 +25,16 @@ const resumes = [
   {
     title: "Company Profile APIKKO",
     description:
-      "A company profile website providing modern digital business solutions. ",
+      "A company profile website providing modern digital business solutions.",
     image: "/apikko.png",
     link: "https://www.apikko.co.id/",
+  },
+  {
+    title: "Trustprop",
+    description:
+      "A comprehensive property platform dedicated to buying, selling, and renting real estate easily and securely in Surabaya.",
+    image: "/trustprop.png",
+    link: "https://www.trustprop.id/",
   },
 ];
 
