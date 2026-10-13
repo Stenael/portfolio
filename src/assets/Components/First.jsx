@@ -1,12 +1,15 @@
-import React from 'react'
-import { FaDownload, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa'
+import React, { useRef, useState, useEffect } from 'react';
+import { FaDownload, FaInstagram, FaLinkedinIn, FaGithub } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function First() {
-  return (
-    <div className="relative h-screen bg-[url('/download.jpg')] bg-cover bg-center">
-      <div className="absolute inset-0 bg-black/50"></div>
+  const constraintsRef = useRef(null);
 
-      <div className="relative z-10 flex flex-col justify-center h-full px-10 md:px-40">
+  return (
+    <div ref={constraintsRef} className="relative h-screen bg-[url('/download.jpg')] bg-cover bg-center overflow-hidden">
+      <div className="absolute inset-0 bg-black/30 pointer-events-none"></div>
+
+      <div className="relative z-10 flex flex-col justify-center h-full px-10 md:px-40 pointer-events-none">
         <h1 className="font-heading text-white text-5xl md:text-5xl font-light leading-none">
           STEVEN PUTRA
         </h1>
@@ -20,47 +23,31 @@ function First() {
         </p>
       </div>
 
-      <div className="absolute bottom-8 right-8 z-20 items-center flex gap-4">
+      {/* Sosial Media & Tombol CV */}
+      <div className="absolute bottom-8 right-8 z-30 flex items-center gap-4">
         <a
           href="/CV-StevenNatanael.pdf"
           download
           className="group flex items-center gap-3 px-5 py-3 rounded-full bg-[#ecb939]/10 border border-[#ecb939]/30 backdrop-blur-md text-[#ecb939] hover:bg-[#ecb939] hover:text-black transition duration-300 shadow-[0_0_20px_rgba(236,185,57,0.15)]"
         >
           <FaDownload className="text-sm group-hover:-translate-y-0.5 transition duration-300" />
-
-          <span className="text-sm font-medium tracking-wide">
-            Download CV
-          </span>
+          <span className="text-sm font-medium tracking-wide">Download CV</span>
         </a>
-        <a
-          href="https://instagram.com/natanaelputrasteven"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white text-2xl hover:text-pink-400 transition"
-        >
+        
+        <a href="https://instagram.com/natanaelputrasteven" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-pink-400 transition">
           <FaInstagram />
         </a>
 
-        <a
-          href="https://www.linkedin.com/in/steven-putra-natanael-641675289/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white text-2xl hover:text-blue-400 transition"
-        >
+        <a href="https://www.linkedin.com/in/steven-putra-natanael-641675289/" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-blue-400 transition">
           <FaLinkedinIn />
         </a>
 
-        <a
-          href="https://github.com/Stenael"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white text-2xl hover:text-gray-400 transition"
-        >
+        <a href="https://github.com/Stenael" target="_blank" rel="noopener noreferrer" className="text-white text-2xl hover:text-gray-400 transition">
           <FaGithub />
         </a>
       </div>
     </div>
-  )
+  );
 }
 
-export default First
+export default First;

@@ -18,141 +18,70 @@ const educations = [
 
 function Education() {
   return (
-    <section id="education">
-      <div className="relative min-h-screen bg-[#ecb939] overflow-hidden px-10 md:px-40 py-20">
+    <section id="education" className="relative min-h-screen bg-black py-24 overflow-hidden">
 
-        <div
-          className="absolute -top-[260px] -left-[326px] w-[550px] h-[550px] border-[30px] border-black/10 rounded-full"
-        ></div>
+      <div className="relative z-10 flex flex-col justify-center px-10 md:px-40 md:py-20 w-full">
+        
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-16 md:mb-24"
+        >
+          <h1 className="text-[#ecb939] text-4xl md:text-5xl font-bold tracking-wide">
+            Education.
+          </h1>
+          <div className="w-20 h-1.5 bg-[#ecb939] mt-4 rounded-full" />
+        </motion.div>
 
-        <div className="absolute bottom-20 right-20 grid grid-cols-5 gap-3 opacity-10">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              animate={{
-                y: [0, -6, 0],
-                opacity: [0.3, 1, 0.3],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: i * 0.08,
-              }}
-              className="w-2 h-2 rounded-full bg-black"
-            ></motion.div>
+        <div className="relative space-y-12 md:space-y-16">
+          {educations.map((item, index) => (
+            <div key={index} className="relative flex items-start gap-6 md:gap-10">
+              
+              {index !== educations.length - 1 && (
+                <div className="absolute left-[19px] md:left-[23px] top-12 bottom-[-4rem] md:bottom-[-5rem] w-[2px] bg-[#2a2a2a]" />
+              )}
+
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="relative z-10 mt-1.5 flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-full bg-[#1e1e1e] border-2 border-[#ecb939] flex items-center justify-center shadow-[0_0_20px_rgba(236,185,57,0.3)]"
+              >
+                <motion.div 
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="w-3 h-3 md:w-4 md:h-4 bg-[#ecb939] rounded-full" 
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.7, delay: index * 0.2 + 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+                className="flex-1 bg-[#1e1e1e]/60 backdrop-blur-md border border-white/5 rounded-2xl p-6 md:p-8 shadow-xl hover:shadow-[0_10px_30px_rgba(236,185,57,0.1)] transition-all duration-300"
+              >
+                <div className="inline-block px-4 py-1.5 bg-[#ecb939]/10 border border-[#ecb939]/30 rounded-full mb-4">
+                  <span className="text-[#ecb939] text-sm md:text-base font-semibold tracking-wider">
+                    {item.startYear} — {item.endYear}
+                  </span>
+                </div>
+
+                <h2 className="text-white text-xl md:text-3xl font-semibold mb-2">
+                  {item.school}
+                </h2>
+                <h3 className="text-gray-400 text-base md:text-lg">
+                  {item.major}
+                </h3>
+              </motion.div>
+            </div>
           ))}
         </div>
-
-        <div
-          className="absolute bottom-0 -left-[30px] w-64 h-64 border-t-[30px] border-r-[30px] border-black/10 rounded-tr-full"
-        ></div>
-
-        <div className="relative z-10">
-
-          <motion.div
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h1 className="text-[#2e2e2e] text-3xl md:text-5xl font-bold text-right">
-              Education
-            </h1>
-          </motion.div>
-
-          <div className="space-y-14">
-            {educations.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 80 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: index * 0.2,
-                }}
-                viewport={{ once: true }}
-                whileHover={{
-                  y: -8,
-                  scale: 1.01,
-                }}
-                className="relative bg-[#2e2e2e]/75 border border-black/10 rounded-[35px] p-8 shadow-[0_20px_60px_rgba(0,0,0,0.25)] overflow-hidden"
-              >
-                <motion.div
-                  animate={{
-                    scale: [1, 1.4, 1],
-                    opacity: [0.2, 0.7, 0.2],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                  }}
-                  className="absolute bottom-4 left-4 w-10 h-10 bg-[#fff44f]/40 rounded-full blur-xl"
-                ></motion.div>
-                <div className="flex items-center mb-8">
-
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="flex flex-col items-center"
-                  >
-                    <div className="w-14 h-14 rounded-full border-4 border-[#fff44f] flex items-center justify-center text-[#fff44f] font-bold bg-[#2e2e2e]">
-                      {item.startYear}
-                    </div>
-                  </motion.div>
-
-                  <div className="flex-1 h-1 bg-[#fff44f]/40 mx-4 relative overflow-hidden rounded-full">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "100%" }}
-                      transition={{
-                        duration: 1.2,
-                        delay: 0.3,
-                      }}
-                      viewport={{ once: true }}
-                      className="absolute inset-0 bg-[#fff44f]"
-                    ></motion.div>
-                  </div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.1 }}
-                    className="flex flex-col items-center"
-                  >
-                    <div className="w-14 h-14 rounded-full border-4 border-[#fff44f] flex items-center justify-center text-[#fff44f] font-bold bg-[#2e2e2e]">
-                      {item.endYear}
-                    </div>
-                  </motion.div>
-                </div>
-                <div>
-                  <motion.h2
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: 0.2,
-                    }}
-                    viewport={{ once: true }}
-                    className="text-[#fff44f] text-lg md:text-3xl font-semibold mb-2"
-                  >
-                    {item.school}
-                  </motion.h2>
-
-                  <motion.h3
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.6,
-                      delay: 0.3,
-                    }}
-                    viewport={{ once: true }}
-                    className="text-[#fff44f]/80 text-sm md:text-lg mb-4"
-                  >
-                    {item.major}
-                  </motion.h3>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        
       </div>
     </section>
   );
